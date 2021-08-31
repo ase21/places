@@ -13,14 +13,39 @@ class _SightListScreenState extends State<SightListScreen> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 72,
-        title: Text(
-          'Список\nинтересных мест',
-          style: TextStyle(
-            fontSize: 32,
-            color: Color(0xFF252849),
-            height: 1.125
-          ),
+        title: RichText(
           textAlign: TextAlign.left,
+          text: TextSpan(
+              style: TextStyle(
+                  fontSize: 32, color: Color(0xFF252849), height: 1.125),
+              children: [
+                TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'c'.toUpperCase(),
+                      style: TextStyle(
+                        color: Colors.green,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'писок\n',
+                    ),
+                  ]
+                ),
+                TextSpan(
+                 children: [
+                   TextSpan(
+                     text: 'и',
+                     style: TextStyle(
+                       color: Colors.yellow,
+                     ),
+                   ),
+                   TextSpan(
+                     text: 'нтересных мест',
+                   )
+                 ]
+                )
+              ]),
         ),
         elevation: 0,
         backgroundColor: Color(0x00000000),
