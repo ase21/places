@@ -20,6 +20,7 @@ class _SightListScreenState extends State<SightListScreen> {
             color: Color(0xFF252849),
             height: 1.125
           ),
+          textAlign: TextAlign.left,
         ),
         elevation: 0,
         backgroundColor: Color(0x00000000),
