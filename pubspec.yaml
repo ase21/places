@@ -12,9 +12,9 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.3
   flutter_svg: ^0.22.0
-  analyzer: ^1.7.1
+  surf_lint_rules: ^1.4.0
 
 dev_dependencies:
   flutter_test:
