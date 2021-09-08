@@ -36,12 +36,13 @@ class _SightListScreenState extends State<SightListScreen> {
       body: Center(
         child: SingleChildScrollView(
           child: Column(
-            children:[
-            SightCard(mocks[0]),
-            SightCard(mocks[1]),
-            SightCard(mocks[2]),
-            SightCard(mocks[3]),
-          ],),
+            children: [
+              SightCard(mocks[0]),
+              SightCard(mocks[1]),
+              SightCard(mocks[2]),
+              SightCard(mocks[1]),
+            ],
+          ),
         ),
       ),
       resizeToAvoidBottomInset: false,

@@ -9,9 +9,11 @@ class SightCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFFF5F5F5),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12), color: Color(0xFFF5F5F5)),
       margin: EdgeInsets.all(16),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
             decoration: BoxDecoration(
@@ -41,9 +43,8 @@ class SightCard extends StatelessWidget {
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(12)),
             ),
             padding: EdgeInsets.all(16),
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Text(
                     _sight.name,
                     style: TextStyle(color: Color(0xFF3B3E5B), fontSize: 16),
@@ -52,7 +53,7 @@ class SightCard extends StatelessWidget {
                     _sight.details,
                     style: TextStyle(color: Color(0xFF7C7E92), fontSize: 14),
                   ),
-                ]),
+            ]),
           )
         ],
       ),
