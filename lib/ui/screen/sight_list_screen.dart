@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/ui/screen/sight_card.dart';
+import 'package:places/ui/screen/sight_details.dart';
 
 import '../../mocks.dart';
 
@@ -35,14 +36,15 @@ class _SightListScreenState extends State<SightListScreen> {
       ),
       body: Center(
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SightCard(mocks[0]),
-              SightCard(mocks[1]),
-              SightCard(mocks[2]),
-              SightCard(mocks[1]),
-            ],
-          ),
+          child: SightDetails(mocks[1]),
+          // child: Column(
+          //   children: [
+          //     SightCard(mocks[0]),
+          //     SightCard(mocks[1]),
+          //     SightCard(mocks[2]),
+          //     SightCard(mocks[1]),
+          //   ],
+          // ),
         ),
       ),
       resizeToAvoidBottomInset: false,
