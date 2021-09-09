@@ -19,32 +19,28 @@ class _SightListScreenState extends State<SightListScreen> {
               style: TextStyle(
                   fontSize: 32, color: Color(0xFF252849), height: 1.125),
               children: [
-                TextSpan(
-                  children: [
-                    TextSpan(
-                      text: 'c'.toUpperCase(),
-                      style: TextStyle(
-                        color: Colors.green,
-                      ),
+                TextSpan(children: [
+                  TextSpan(
+                    text: 'c'.toUpperCase(),
+                    style: TextStyle(
+                      color: Colors.green,
                     ),
-                    TextSpan(
-                      text: 'писок\n',
+                  ),
+                  TextSpan(
+                    text: 'писок\n',
+                  ),
+                ]),
+                TextSpan(children: [
+                  TextSpan(
+                    text: 'и',
+                    style: TextStyle(
+                      color: Colors.yellow,
                     ),
-                  ]
-                ),
-                TextSpan(
-                 children: [
-                   TextSpan(
-                     text: 'и',
-                     style: TextStyle(
-                       color: Colors.yellow,
-                     ),
-                   ),
-                   TextSpan(
-                     text: 'нтересных мест',
-                   )
-                 ]
-                )
+                  ),
+                  TextSpan(
+                    text: 'нтересных мест',
+                  )
+                ])
               ]),
         ),
         elevation: 0,
