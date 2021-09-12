@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:places/ui/res/colors.dart';
 import 'package:places/ui/screen/sight_card.dart';
 import 'package:places/ui/screen/sight_details.dart';
 
-import '../../mocks.dart';
+import 'package:places/mocks.dart';
 
+/// экран со списком мест
 class SightListScreen extends StatefulWidget {
   const SightListScreen({Key? key}) : super(key: key);
 
@@ -19,32 +21,36 @@ class _SightListScreenState extends State<SightListScreen> {
         toolbarHeight: 72,
         title: RichText(
           textAlign: TextAlign.left,
-          text: TextSpan(
-              style: TextStyle(
-                  fontSize: 32, color: Color(0xFF252849), height: 1.125),
-              children: [
-                TextSpan(
-                  text: 'Список\n',
-                ),
-                TextSpan(
-                  text: 'интересных мест',
-                )
-              ]),
+          text: const TextSpan(
+            style: TextStyle(
+              fontSize: 32,
+              color: colorTextDarkGray,
+              height: 1.125,
+            ),
+            children: [
+              TextSpan(
+                text: 'Список\n',
+              ),
+              TextSpan(
+                text: 'интересных мест',
+              ),
+            ],
+          ),
         ),
         elevation: 0,
-        backgroundColor: Color(0x00000000),
+        backgroundColor: colorWhite,
       ),
       body: Center(
         child: SingleChildScrollView(
-          // child: SightDetails(sight: mocks[1]),
-          child: Column(
-            children: [
-              SightCard(sight:mocks[0]),
-              SightCard(sight:mocks[1]),
-              SightCard(sight:mocks[2]),
-              SightCard(sight:mocks[1]),
-            ],
-          ),
+          child: SightDetails(sight: mocks[1]),
+          // child: Column(
+          //   children: [
+          //     SightCard(sight: mocks[0]),
+          //     SightCard(sight: mocks[1]),
+          //     SightCard(sight: mocks[2]),
+          //     SightCard(sight: mocks[1]),
+          //   ],
+          // ),
         ),
       ),
       resizeToAvoidBottomInset: false,

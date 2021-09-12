@@ -11,3 +11,4 @@ const colorCardBackgroundGray = Color(0xFF686464);
 
 const colorBorderGray = Color(0x3D7C7E92);
 const colorButtonGreen = Color(0xFF4CAF50);
+const colorBackgroundDarkGray = Color(0xFF252849);

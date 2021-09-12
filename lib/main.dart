@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:places/ui/screen/sight_list_screen.dart';
 
 int globalCount = 0;
+
 void main() {
-  runApp(App());
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
@@ -11,7 +12,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: SightListScreen(),
     );
   }
