@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
+import 'package:places/ui/res/colors.dart';
 
 class SightCard extends StatelessWidget {
   final Sight _sight;
@@ -10,7 +11,7 @@ class SightCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12), color: Color(0xFFF5F5F5)),
+          borderRadius: BorderRadius.circular(12), color: colorCardBackgroundLightGray),
       margin: EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -18,7 +19,7 @@ class SightCard extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
-              color: Color(0xFF686464),
+              color: colorCardBackgroundGray,
             ),
             padding: EdgeInsets.all(16),
             height: 100,
@@ -28,10 +29,10 @@ class SightCard extends StatelessWidget {
               children: [
                 Text(
                   _sight.type,
-                  style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 14),
+                  style: TextStyle(color: colorWhite, fontSize: 14),
                 ),
                 Container(
-                  color: Colors.green,
+                  color: colorGreen,
                   height: 20,
                   width: 20,
                 )
@@ -47,11 +48,11 @@ class SightCard extends StatelessWidget {
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Text(
                     _sight.name,
-                    style: TextStyle(color: Color(0xFF3B3E5B), fontSize: 16),
+                    style: TextStyle(color: colorTextDarkGray, fontSize: 16),
                   ),
                   Text(
                     _sight.details,
-                    style: TextStyle(color: Color(0xFF7C7E92), fontSize: 14),
+                    style: TextStyle(color: colorTextGray, fontSize: 14),
                   ),
             ]),
           )

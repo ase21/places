@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
+import 'package:places/ui/res/colors.dart';
 
 class SightDetails extends StatelessWidget {
   final Sight _sight;
@@ -23,7 +24,7 @@ class SightDetails extends StatelessWidget {
                   margin: EdgeInsets.fromLTRB(16, 36, 0, 0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Color(0xFFFFFFFF),
+                    color: colorWhite,
                   )),
             ),
           ),
@@ -36,7 +37,7 @@ class SightDetails extends StatelessWidget {
                   _sight.name,
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                      color: Color(0xFF3B3E5B),
+                      color: colorTextDarkGray,
                       fontSize: 25,
                       fontWeight: FontWeight.bold),
                 ),
@@ -45,11 +46,11 @@ class SightDetails extends StatelessWidget {
                     TextSpan(
                         text: _sight.type,
                         style: TextStyle(
-                            color: Color(0xFF3B3E5B),
+                            color: colorTextDarkGray,
                             fontWeight: FontWeight.bold)),
                     TextSpan(
                       text: '  тут будет место работы',
-                      style: TextStyle(color: Color(0xFF7C7E92)),
+                      style: TextStyle(color: colorTextGray),
                     )
                   ]),
                   textAlign: TextAlign.left,
@@ -59,7 +60,7 @@ class SightDetails extends StatelessWidget {
                   child: Text(
                     _sight.details,
                     textAlign: TextAlign.left,
-                    style: TextStyle(color: Color(0xFF3B3E5B), fontSize: 14),
+                    style: TextStyle(color: colorTextDarkGray, fontSize: 14),
                   ),
                 ),
                 Container(
@@ -67,12 +68,12 @@ class SightDetails extends StatelessWidget {
                     margin: EdgeInsets.only(bottom: 16),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      color: Color(0xFF4CAF50),
+                      color: colorButtonGreen,
                     )),
                 Container(
                   height: 0.8,
                   margin: EdgeInsets.symmetric(vertical: 8),
-                  color: Color(0x3D7C7E92),
+                  color: colorBorderGray,
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.max,
@@ -82,7 +83,7 @@ class SightDetails extends StatelessWidget {
                     child: Container(
                         height: 40,
                         decoration: BoxDecoration(
-                          color: Color(0x8F7C7E92),
+                          color: colorTextGray,
                         )),
                   ),
                   Expanded(
@@ -90,7 +91,7 @@ class SightDetails extends StatelessWidget {
                     child: Container(
                         height: 40,
                         decoration: BoxDecoration(
-                          color: Color(0xFF3B3E5B),
+                          color: colorTextDarkGray,
                         )),
                   )
                 ],)
