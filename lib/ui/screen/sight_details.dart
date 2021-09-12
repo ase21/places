@@ -3,9 +3,9 @@ import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/colors.dart';
 
 class SightDetails extends StatelessWidget {
-  final Sight _sight;
+  final Sight sight;
 
-  const SightDetails(this._sight, {Key? key}) : super(key: key);
+  const SightDetails({Key? key, required this.sight}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class SightDetails extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  _sight.name,
+                  sight.name,
                   textAlign: TextAlign.left,
                   style: TextStyle(
                       color: colorTextDarkGray,
@@ -44,7 +44,7 @@ class SightDetails extends StatelessWidget {
                 RichText(
                   text: TextSpan(style: TextStyle(fontSize: 14), children: [
                     TextSpan(
-                        text: _sight.type,
+                        text: sight.type,
                         style: TextStyle(
                             color: colorTextDarkGray,
                             fontWeight: FontWeight.bold)),
@@ -58,7 +58,7 @@ class SightDetails extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 24.0),
                   child: Text(
-                    _sight.details,
+                    sight.details,
                     textAlign: TextAlign.left,
                     style: TextStyle(color: colorTextDarkGray, fontSize: 14),
                   ),

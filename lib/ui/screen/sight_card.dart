@@ -3,9 +3,9 @@ import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/colors.dart';
 
 class SightCard extends StatelessWidget {
-  final Sight _sight;
+  final Sight sight;
 
-  const SightCard(this._sight, {Key? key}) : super(key: key);
+  const SightCard({Key? key, required this.sight}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class SightCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  _sight.type,
+                  sight.type,
                   style: TextStyle(color: colorWhite, fontSize: 14),
                 ),
                 Container(
@@ -47,11 +47,11 @@ class SightCard extends StatelessWidget {
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Text(
-                    _sight.name,
+                    sight.name,
                     style: TextStyle(color: colorTextDarkGray, fontSize: 16),
                   ),
                   Text(
-                    _sight.details,
+                    sight.details,
                     style: TextStyle(color: colorTextGray, fontSize: 14),
                   ),
             ]),
