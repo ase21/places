@@ -165,7 +165,7 @@ class SightDetails extends StatelessWidget {
                           ),
                           const Text(
                             'В Избранное',
-                            style: const TextStyle(
+                            style: TextStyle(
                               color: colorTextDarkGray,
                             ),
                           ),

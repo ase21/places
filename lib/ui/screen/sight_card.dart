@@ -26,9 +26,9 @@ class SightCard extends StatelessWidget {
                   sight.url,
                   fit: BoxFit.fitWidth,
                   loadingBuilder: (
-                    BuildContext context,
-                    Widget child,
-                    ImageChunkEvent? loadingProgress,
+                    context,
+                    child,
+                    loadingProgress,
                   ) {
                     if (loadingProgress == null) {
                       return child;
