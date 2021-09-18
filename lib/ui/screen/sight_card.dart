@@ -25,8 +25,11 @@ class SightCard extends StatelessWidget {
                 child: Image.network(
                   sight.url,
                   fit: BoxFit.fitWidth,
-                  loadingBuilder: (BuildContext context, Widget child,
-                      ImageChunkEvent? loadingProgress,) {
+                  loadingBuilder: (
+                    BuildContext context,
+                    Widget child,
+                    ImageChunkEvent? loadingProgress,
+                  ) {
                     if (loadingProgress == null) {
                       return child;
                     }
@@ -59,7 +62,7 @@ class SightCard extends StatelessWidget {
                       style: const TextStyle(color: colorWhite, fontSize: 14),
                     ),
                     Image.asset(
-                      'assets/icons/Heart.png',
+                      'assets/icons/WhiteHeart.png',
                       fit: BoxFit.fitHeight,
                       height: 20,
                       width: 20,
