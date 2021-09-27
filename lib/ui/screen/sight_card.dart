@@ -19,28 +19,55 @@ class SightCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Container(
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
-              color: colorCardBackgroundGray,
-            ),
-            padding: const EdgeInsets.all(16),
-            height: 100,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  sight.type,
-                  style: const TextStyle(color: colorWhite, fontSize: 14),
+          Stack(
+            children: [
+              Container(
+                child: Image.network(
+                  sight.url,
+                  fit: BoxFit.fitWidth,
+                  loadingBuilder: (BuildContext context, Widget child,
+                      ImageChunkEvent? loadingProgress,) {
+                    if (loadingProgress == null) {
+                      return child;
+                    }
+                    return Center(
+                      child: CircularProgressIndicator(
+                        value: loadingProgress.expectedTotalBytes != null
+                            ? loadingProgress.cumulativeBytesLoaded /
+                                loadingProgress.expectedTotalBytes!
+                            : null,
+                      ),
+                    );
+                  },
                 ),
-                Container(
-                  color: colorGreen,
-                  height: 20,
-                  width: 20,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(12),
+                  ),
                 ),
-              ],
-            ),
+                height: 90,
+                width: double.infinity,
+              ),
+              Container(
+                margin: const EdgeInsets.all(16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      sight.type,
+                      style: const TextStyle(color: colorWhite, fontSize: 14),
+                    ),
+                    Image.asset(
+                      'assets/icons/Heart.png',
+                      fit: BoxFit.fitHeight,
+                      height: 20,
+                      width: 20,
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
           Container(
             decoration: const BoxDecoration(
