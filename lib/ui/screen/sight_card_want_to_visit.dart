@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/colors.dart';
 
-/// карточка для экрана со списком мест
-class SightCard extends StatelessWidget {
+/// карточка для экрана желаемых к посещению мест
+class SightCardWantToVisit extends StatelessWidget {
   final Sight sight;
 
-  const SightCard({required this.sight, Key? key}) : super(key: key);
+  const SightCardWantToVisit({required this.sight, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -61,11 +61,25 @@ class SightCard extends StatelessWidget {
                       sight.type,
                       style: const TextStyle(color: colorWhite, fontSize: 14),
                     ),
-                    Image.asset(
-                      'assets/icons/WhiteHeart.png',
-                      fit: BoxFit.fitHeight,
-                      height: 20,
-                      width: 20,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Image.asset(
+                          'assets/icons/CalendarWhite.png',
+                          fit: BoxFit.fitHeight,
+                          height: 20,
+                          width: 20,
+                        ),
+                        const SizedBox(
+                          width: 8,
+                        ),
+                        Image.asset(
+                          'assets/icons/WhiteHeart.png',
+                          fit: BoxFit.fitHeight,
+                          height: 20,
+                          width: 20,
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -87,9 +101,13 @@ class SightCard extends StatelessWidget {
                   style:
                       const TextStyle(color: colorTextDarkGray, fontSize: 16),
                 ),
-                Text(
-                  sight.details,
-                  style: const TextStyle(color: colorTextGray, fontSize: 14),
+                const Text(
+                  'Запланировано на 12 окт. 2020',
+                  style: TextStyle(color: colorGreen, fontSize: 14),
+                ),
+                const Text(
+                  'закрыто до 09:00',
+                  style: TextStyle(color: colorTextGray, fontSize: 14),
                 ),
               ],
             ),
