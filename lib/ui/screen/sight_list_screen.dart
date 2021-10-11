@@ -21,13 +21,9 @@ class _SightListScreenState extends State<SightListScreen> {
         toolbarHeight: 72,
         title: RichText(
           textAlign: TextAlign.left,
-          text: const TextSpan(
-            style: TextStyle(
-              fontSize: 32,
-              color: colorTextDarkGray,
-              height: 1.125,
-            ),
-            children: [
+          text: TextSpan(
+            style: Theme.of(context).textTheme.headline4,
+            children: const [
               TextSpan(
                 text: 'Список\n',
               ),
@@ -36,21 +32,19 @@ class _SightListScreenState extends State<SightListScreen> {
               ),
             ],
           ),
+
         ),
         elevation: 0,
-        backgroundColor: colorWhite,
       ),
       // body: SightDetails(sight: mocks[1]),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SightCard(sight: mocks[0]),
-              SightCard(sight: mocks[1]),
-              SightCard(sight: mocks[2]),
-              SightCard(sight: mocks[1]),
-            ],
-          ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SightCard(sight: mocks[0]),
+            SightCard(sight: mocks[1]),
+            SightCard(sight: mocks[2]),
+            SightCard(sight: mocks[1]),
+          ],
         ),
       ),
       resizeToAvoidBottomInset: false,

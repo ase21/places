@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:places/ui/res/colors.dart';
+import 'package:places/ui/res/styles.dart';
 import 'package:places/ui/screen/sight_card_already_visited.dart';
 import 'package:places/ui/screen/sight_card_want_to_visit.dart';
 
@@ -22,17 +22,13 @@ class _VisitingState extends State {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: const Center(
+          title: Center(
             child: Text(
               'Избранное',
-              style: TextStyle(
-                fontSize: 18,
-                color: colorBackgroundDarkGray,
-              ),
+              style: regular18,
             ),
           ),
           elevation: 0,
-          backgroundColor: colorTransparent,
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(48),
             child: Container(
@@ -41,29 +37,19 @@ class _VisitingState extends State {
                 horizontal: 16,
               ),
               decoration: BoxDecoration(
-                color: colorCardBackgroundLightGray,
+                color: Theme.of(context).backgroundColor,
                 borderRadius: BorderRadius.circular(40),
               ),
-              child: TabBar(
-                indicator: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    25.0,
-                  ),
-                  color: colorTextDarkGray,
-                ),
-                labelColor: colorWhite,
-                unselectedLabelColor: colorBorderGray,
-                tabs: const [
+              child: const TabBar(
+                tabs:  [
                   Tab(
                     child: Text(
                       'Хочу посетить',
-                      style: TextStyle(fontSize: 14),
                     ),
                   ),
                   Tab(
                     child: Text(
                       'Посетил',
-                      style: TextStyle(fontSize: 14),
                     ),
                   ),
                 ],
