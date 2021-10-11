@@ -3,7 +3,7 @@ import 'package:places/ui/res/colors.dart';
 
 final lightTheme = ThemeData(
   primaryColor: lightModePrimaryColor,
-  accentColor: lightModePrimaryColor,
+  accentColor: lightModeAccentColor,
   backgroundColor: lightModeCardBackgroundColor,
   scaffoldBackgroundColor: lightModePrimaryColor,
   tabBarTheme: lightTabBarThemeData,
