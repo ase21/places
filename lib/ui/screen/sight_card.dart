@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/colors.dart';
+import 'package:places/ui/res/strings.dart';
+import 'package:places/ui/res/styles.dart';
 
 /// карточка для экрана со списком мест
 class SightCard extends StatelessWidget {
@@ -13,7 +15,7 @@ class SightCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: colorCardBackgroundLightGray,
+        color: Theme.of(context).backgroundColor,
       ),
       margin: const EdgeInsets.all(16),
       child: Column(
@@ -22,30 +24,30 @@ class SightCard extends StatelessWidget {
           Stack(
             children: [
               Container(
-                child: Image.network(
-                  sight.url,
-                  fit: BoxFit.fitWidth,
-                  loadingBuilder: (
-                    context,
-                    child,
-                    loadingProgress,
-                  ) {
-                    if (loadingProgress == null) {
-                      return child;
-                    }
-                    return Center(
-                      child: CircularProgressIndicator(
-                        value: loadingProgress.expectedTotalBytes != null
-                            ? loadingProgress.cumulativeBytesLoaded /
-                                loadingProgress.expectedTotalBytes!
-                            : null,
-                      ),
-                    );
-                  },
-                ),
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.vertical(
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.vertical(
                     top: Radius.circular(12),
+                  ),
+                  child: Image.network(
+                    sight.url,
+                    fit: BoxFit.fitWidth,
+                    loadingBuilder: (
+                      context,
+                      child,
+                      loadingProgress,
+                    ) {
+                      if (loadingProgress == null) {
+                        return child;
+                      }
+                      return Center(
+                        child: CircularProgressIndicator(
+                          value: loadingProgress.expectedTotalBytes != null
+                              ? loadingProgress.cumulativeBytesLoaded /
+                                  loadingProgress.expectedTotalBytes!
+                              : null,
+                        ),
+                      );
+                    },
                   ),
                 ),
                 height: 90,
@@ -59,10 +61,10 @@ class SightCard extends StatelessWidget {
                   children: [
                     Text(
                       sight.type,
-                      style: const TextStyle(color: colorWhite, fontSize: 14),
+                      style: const TextStyle(color: lightModePrimaryColor),
                     ),
                     Image.asset(
-                      'assets/icons/WhiteHeart.png',
+                      whiteHeartImage,
                       fit: BoxFit.fitHeight,
                       height: 20,
                       width: 20,
@@ -84,12 +86,11 @@ class SightCard extends StatelessWidget {
               children: [
                 Text(
                   sight.name,
-                  style:
-                      const TextStyle(color: colorTextDarkGray, fontSize: 16),
+                  style: regular16,
                 ),
                 Text(
                   sight.details,
-                  style: const TextStyle(color: colorTextGray, fontSize: 14),
+                  style: grayRegular14,
                 ),
               ],
             ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/screen/sight_list_screen.dart';
+import 'package:places/ui/res/themes.dart';
 import 'package:places/ui/screen/visiting_screen.dart';
 
 int globalCount = 0;
@@ -13,8 +15,10 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(title: 'HomePage'),
+    return MaterialApp(
+      home: const HomePage(title: 'HomePage'),
+      theme: lightTheme,
+      darkTheme: darkTheme,
     );
   }
 }
@@ -55,17 +59,15 @@ class BottomNavigationState extends State with SingleTickerProviderStateMixin {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: tabController.index,
         onTap: (value) => tabController.animateTo(value),
-        unselectedItemColor: Colors.grey,
-        selectedItemColor: Colors.deepOrange,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         items: [
           BottomNavigationBarItem(
-            icon: Image.asset('assets/icons/List.png'),
+            icon: Image.asset(listImage),
             label: 'List',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset('assets/icons/HeartFull.png'),
+            icon: Image.asset(heartFullImage),
             label: 'Visiting',
           ),
         ],
