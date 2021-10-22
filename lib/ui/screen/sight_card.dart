@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/colors.dart';
+import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/res/styles.dart';
 
 /// карточка для экрана со списком мест
@@ -63,7 +64,7 @@ class SightCard extends StatelessWidget {
                       style: const TextStyle(color: lightModePrimaryColor),
                     ),
                     Image.asset(
-                      'assets/icons/WhiteHeart.png',
+                      whiteHeartImage,
                       fit: BoxFit.fitHeight,
                       height: 20,
                       width: 20,

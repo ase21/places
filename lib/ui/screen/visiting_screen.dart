@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/res/styles.dart';
 import 'package:places/ui/screen/sight_card_already_visited.dart';
 import 'package:places/ui/screen/sight_card_want_to_visit.dart';
@@ -24,7 +25,7 @@ class _VisitingState extends State {
         appBar: AppBar(
           title: Center(
             child: Text(
-              'Избранное',
+              favoriteString,
               style: regular18,
             ),
           ),
@@ -40,16 +41,16 @@ class _VisitingState extends State {
                 color: Theme.of(context).backgroundColor,
                 borderRadius: BorderRadius.circular(40),
               ),
-              child: const TabBar(
+              child: TabBar(
                 tabs:  [
                   Tab(
                     child: Text(
-                      'Хочу посетить',
+                      wantToVisitString,
                     ),
                   ),
                   Tab(
                     child: Text(
-                      'Посетил',
+                      alreadyVisitedString,
                     ),
                   ),
                 ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/colors.dart';
+import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/res/styles.dart';
 
 /// карточка для экрана желаемых к посещению мест
@@ -66,7 +67,7 @@ class SightCardWantToVisit extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Image.asset(
-                          'assets/icons/CalendarWhite.png',
+                          calendarWhiteImage,
                           fit: BoxFit.fitHeight,
                           height: 20,
                           width: 20,
@@ -75,7 +76,7 @@ class SightCardWantToVisit extends StatelessWidget {
                           width: 8,
                         ),
                         Image.asset(
-                          'assets/icons/WhiteHeart.png',
+                          whiteHeartImage,
                           fit: BoxFit.fitHeight,
                           height: 20,
                           width: 20,

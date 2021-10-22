@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:places/mocks.dart';
-import 'package:places/ui/screen/sight_details.dart';
+import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/screen/sight_list_screen.dart';
 import 'package:places/ui/res/themes.dart';
 import 'package:places/ui/screen/visiting_screen.dart';
@@ -64,11 +63,11 @@ class BottomNavigationState extends State with SingleTickerProviderStateMixin {
         showUnselectedLabels: false,
         items: [
           BottomNavigationBarItem(
-            icon: Image.asset('assets/icons/List.png'),
+            icon: Image.asset(listImage),
             label: 'List',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset('assets/icons/HeartFull.png'),
+            icon: Image.asset(heartFullImage),
             label: 'Visiting',
           ),
         ],

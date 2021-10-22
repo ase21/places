@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/colors.dart';
+import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/res/styles.dart';
 
 /// экран с детальной информацией о месте
@@ -47,7 +48,7 @@ class SightDetails extends StatelessWidget {
                   width: 32,
                   margin: const EdgeInsets.fromLTRB(16, 36, 0, 0),
                   child: SvgPicture.asset(
-                    'assets/icons/Arrow.svg',
+                    arrowImage,
                     color: Theme.of(context).accentColor,
                   ),
                   decoration: BoxDecoration(
@@ -108,13 +109,13 @@ class SightDetails extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      'assets/icons/GO.png',
+                      goImage,
                     ),
                     const SizedBox(
                       width: 8,
                     ),
                     Text(
-                      'построить маршрут'.toUpperCase(),
+                      buildRouteString.toUpperCase(),
                       style: const TextStyle(
                         color: lightModePrimaryColor,
                       ),
@@ -136,13 +137,13 @@ class SightDetails extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset(
-                            'assets/icons/Calendar.png',
+                            calendarImage,
                           ),
                           const SizedBox(
                             width: 8,
                           ),
                           Text(
-                            'Запланировать',
+                            toScheduleString,
                             style: grayRegular14,
                           ),
                         ],
@@ -156,14 +157,14 @@ class SightDetails extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SvgPicture.asset(
-                            'assets/icons/Heart.svg',
+                            heartImage,
                             color: Theme.of(context).accentColor,
                           ),
                           const SizedBox(
                             width: 8,
                           ),
-                          const Text(
-                            'В Избранное',
+                          Text(
+                            inFavoriteString,
                           ),
                         ],
                       ),

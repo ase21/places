@@ -36,17 +36,18 @@ class _SightListScreenState extends State<SightListScreen> {
         ),
         elevation: 0,
       ),
-      body: SightDetails(sight: mocks[1]),
-      // body: SingleChildScrollView(
-      //   child: Column(
-      //     children: [
-      //       SightCard(sight: mocks[0]),
-      //       SightCard(sight: mocks[1]),
-      //       SightCard(sight: mocks[2]),
-      //       SightCard(sight: mocks[1]),
-      //     ],
-      //   ),
-      // ),
+      // показать список мест или детали места
+      // body: SightDetails(sight: mocks[1]),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SightCard(sight: mocks[0]),
+            SightCard(sight: mocks[1]),
+            SightCard(sight: mocks[2]),
+            SightCard(sight: mocks[1]),
+          ],
+        ),
+      ),
       resizeToAvoidBottomInset: false,
     );
   }
